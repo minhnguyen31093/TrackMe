@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/list_selector_background"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:background="@android:color/darker_gray"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/bContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ivLocation" />
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="-- km
+Distance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSpeed"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/ivLocation"
+        app:layout_constraintTop_toBottomOf="@+id/bContent" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="-- km/h
+Avg. Speed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintStart_toEndOf="@+id/tvDistance"
+        app:layout_constraintTop_toBottomOf="@+id/bContent" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="01:00:00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivLocation"
+        app:layout_constraintStart_toEndOf="@+id/tvSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/bContent" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TrackMe</string>
+    <string name="record_history">Record History</string>
+    <string name="record">Record</string>
+    <string name="blank">--</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirm_stop_record">Do you want to save current record?</string>
+    <string name="location_service_off_message">Turn on Location Service to Record Route</string>
+    <string name="setting">Setting</string>
+    <string name="format_distance">%s\nDistance</string>
+    <string name="format_avg_speed">%s\nAvg. Speed</string>
+    <string name="format_speed">%s\nSpeed</string>
+    <string name="format_km">%s km</string>
+    <string name="format_km_h">%s km/h</string>
+    <string name="format_time">%1$s:%2$s:%3$s</string>
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="256dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/bContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="btnPause, btnResume, btnStop" />
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="-- km
+Distance"
+        app:layout_constraintBottom_toTopOf="@+id/bContent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSpeed"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/fMap" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="-- km/h
+Speed"
+        app:layout_constraintBottom_toTopOf="@+id/bContent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintStart_toEndOf="@+id/tvDistance" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="01:00:00"
+        app:layout_constraintBottom_toTopOf="@+id/bContent"
+        app:layout_constraintEnd_toEndOf="@+id/fMap"
+        app:layout_constraintStart_toEndOf="@+id/tvSpeed" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@+id/bContent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/control"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bContent" />
+
+    <ImageButton
+        android:id="@+id/btnPause"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vector_pause" />
+
+    <android.support.constraint.Group
+        android:id="@+id/gPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="btnResume, btnStop" />
+
+    <ImageButton
+        android:id="@+id/btnResume"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStop"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vector_resume" />
+
+    <ImageButton
+        android:id="@+id/btnStop"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnResume"
+        app:srcCompat="@drawable/vector_stop" />
+
+    <ProgressBar
+        android:id="@+id/pbRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
